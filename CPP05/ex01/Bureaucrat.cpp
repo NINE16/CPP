@@ -77,7 +77,7 @@ void Bureaucrat:: signForm(Form &form)
 	}
 	catch (std:: exception &e) 
 	{
-		std:: cout << this->getName() << " couldn’t sign " << this->name << " because their grade was too low" << std:: endl;
+		std:: cout << this->getName() << " couldn’t sign " << this->name << std:: endl;
 	}
 }
 

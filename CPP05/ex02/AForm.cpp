@@ -1,13 +1,5 @@
-#include "Form.hpp"
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
-
-// Form:: Form()
-// {
-// 	this->isSigned = false;
-// 	this->grade_sign = 40;
-// 	this->grade_exec = 3;
-// 	std::cout << "Form constructor called" << std::endl;
-// }
 
 AForm:: AForm(std:: string f_name, int grade_to_sign, int grade_to_exec) : name(f_name), grade_sign(grade_to_sign), grade_exec(grade_to_exec)
 {
@@ -24,7 +16,7 @@ AForm:: AForm(std:: string f_name, int grade_to_sign, int grade_to_exec) : name(
 }
 
 
-AForm:: AForm(const AForm  &cpy)
+AForm:: AForm(AForm &cpy)
 {
 	(*this)=cpy;
 }
@@ -48,8 +40,9 @@ void AForm:: beSigned(const Bureaucrat &Bureaucrat)
 	if (Bureaucrat.getGrade() > this->getGradeSign())
 	{
 		throw GradeTooLowException();
-		this->isSigned = true;
 	}
+	else
+		this->isSigned = true;
 }
 
 int AForm:: getGradeSign() const
@@ -57,12 +50,22 @@ int AForm:: getGradeSign() const
 	return (this->grade_sign);
 }
 
-std::string Form:: getName() const
+int AForm:: getGradetoExec() const
+{
+	return (this->grade_exec);
+}
+
+bool AForm:: getSigned() const
+{
+	return (this->isSigned);
+}
+
+std::string AForm:: getName() const
 {
 	return (this->name);
 }
 
-std:: ostream & operator<<(std:: ostream & o, const Form &f)
+std:: ostream & operator<<(std:: ostream & o, const AForm &f)
 {
 	o   << f.getName() << " report needs " << f.getGradeSign() << " to be signed" << std:: endl;
 	return (o);

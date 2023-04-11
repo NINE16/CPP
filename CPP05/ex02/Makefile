@@ -1,6 +1,6 @@
 CC		= c++
 
-CFLAGS	= -Wall -Werror -Wextra -std=c++98 #-fsanitize=address
+CFLAGS	= -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
 SRCS	= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
 
@@ -8,7 +8,7 @@ OBJS	= ${SRCS:.cpp=.o}
 
 RM		= rm -f 
 
-NAME	= Form
+NAME	= Forms
 
 all:	${NAME}
 .cpp.o:	

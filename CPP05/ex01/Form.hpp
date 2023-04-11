@@ -17,6 +17,7 @@ class Form
 			Form(std:: string name, int grade_to_sign, int grade_to_exec);
 			Form &operator= (const Form &z);
 			void beSigned(const Bureaucrat &Bureaucrat);
+			virtual void executeForm(Bureaucrat const &bureaucrat) const = 0;
 			int getGradeSign() const;
 			std:: string getName() const;
 			
