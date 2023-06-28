@@ -6,7 +6,7 @@ int	main()
 	{
 		try
 		{
-			Bureaucrat test("Bob", 1);
+			Bureaucrat test("Bob", 151);
 			std::cout << test << std::endl;
 			std:: cout << "----------------------------" << std:: endl;
 			Form bibi("Finance", 20, 150);

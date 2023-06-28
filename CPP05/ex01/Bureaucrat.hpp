@@ -5,7 +5,7 @@
 #include <iomanip>
 #include <iostream>
 
-class AForm;
+class Form;
 
 class Bureaucrat
 {
@@ -16,8 +16,8 @@ class Bureaucrat
 			Bureaucrat &operator= (const Bureaucrat &z);
 			void incrementGrade(int grade);
 			void decrementGrade(int grade);
-			void signForm(AForm &form);
-			void executeForm(AForm const &form);
+			void signForm(Form &form);
+			void executeForm(Form const &form);
 
 			~Bureaucrat();
 
