@@ -33,6 +33,12 @@ void Converter:: convert(const std:: string str)
 {
 	const char *copy = str.c_str();
 	double copy2 = std::atof(copy);
+	isFloat(str);
+	/*dete type here
+	1) if it has a dot and an f it's float
+	2) if it has a . it is a double
+	3) if no . and is number it's int
+	4) if its a letter or printable character it's a char */
 	// return first string to char -- float
 	// string to float 
 	if (str == "nan" || str== "-inff" || str=="+inff" || str=="nanf" || str=="inf" || str == " -inf" || str ==  "+inf")
@@ -60,25 +66,33 @@ void Converter:: convert(const std:: string str)
 }
 
 
-int isChar(std:: string arg)
+// int isChar(std:: string arg)
+// {
+
+// }
+
+int Converter::	isFloat(std:: string arg)
 {
-
-}
-
-int	isFloat(std:: string arg)
-{
-
+	if (arg.find('.', 0) == std:: string::npos || arg.back() != 'f')
+		std:: cout << "there is no . and f, so not float" << std:: endl;
+	else
+		std:: cout << "this seems to be a float" << std:: endl;
+	return (0);
 }
 
 int	isDouble(std:: string arg)
 {
-
+	if (arg.find('.', 0) != std:: string::npos || arg.back() != 'f')
+		std:: cout << "this seems to be a doudble" << std:: endl;
+	else
+		std:: cout << "not a double" << std:: endl;
+	return (0);
 }
 
-int	isInt(std:: string arg)
-{
+// int	isInt(std:: string arg)
+// {
 	
-}
+// }
 
 /*
 1) for each type, create a function to determine whether the arg is that type

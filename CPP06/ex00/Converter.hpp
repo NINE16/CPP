@@ -9,6 +9,8 @@
 #include <fstream>
 #include <limits>
 
+/* first figure out the actual type and convert it from string */
+
 class Converter
 {
 	public:
@@ -19,10 +21,10 @@ class Converter
 			~Converter();
 
 			void convert(std:: string str);
-			int isChar(std:: string arg)
-			int	isDouble(std:: string arg)
-			int	isInt(std:: string arg)
-			int	isFloat(std:: string arg)
+			// int isChar(std:: string arg);
+			// int	isDouble(std:: string arg);
+			// int	isInt(std:: string arg);
+			int	isFloat(std:: string arg);
 			
 	private:
 			const std:: string arg;

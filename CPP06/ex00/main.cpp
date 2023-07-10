@@ -1,5 +1,7 @@
 #include "Converter.hpp"
 
+/* first figure out the actual type and convert it from string */
+
 int main(int argc, char **argv)
 {
 	if (argc < 2)
