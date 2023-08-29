@@ -21,11 +21,15 @@ class Converter
 			~Converter();
 
 			void convert(std:: string str);
+			std:: string mytype (std:: string str);
+
 			// int isChar(std:: string arg);
-			// int	isDouble(std:: string arg);
-			// int	isInt(std:: string arg);
-			int	isFloat(std:: string arg);
-			
+			void	isDouble(std:: string arg);
+			void	isInt(std:: string arg);
+			void	isFloat(std:: string arg);
+			void	isChar(std:: string arg);
+
+
 	private:
 			const std:: string arg;
 };
